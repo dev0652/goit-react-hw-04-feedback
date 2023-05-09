@@ -11,10 +11,16 @@ import {
 
 class Feedback extends Component {
   state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
+    good: 2,
+    neutral: 3,
+    bad: 5,
   };
+
+  countTotalFeedback = () => {
+    return Object.values(this.state).reduce((prev, value) => prev + value, 0);
+  };
+
+  countPositiveFeedbackPercentage = () => {};
 
   render() {
     return (
@@ -35,6 +41,8 @@ class Feedback extends Component {
               {key}: {value}
             </StatItem>
           ))}
+
+          <StatItem key="total">Total: {this.countTotalFeedback}</StatItem>
         </StatList>
       </Wrapper>
     );
