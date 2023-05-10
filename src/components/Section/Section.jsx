@@ -1,11 +1,11 @@
-import { Heading } from './Section.styled';
+import { Heading, SectionWrapper } from './Section.styled';
 
 const Section = ({ title, children }) => {
   return (
-    <section>
+    <SectionWrapper>
       <Heading>{title}</Heading>
       {children}
-    </section>
+    </SectionWrapper>
   );
 };
 
