@@ -17,8 +17,9 @@ export const Button = styled.button`
   padding: 10px;
   width: 7rem;
   height: 7rem;
+`;
 
-  /* background-color: ${
+/* background-color: ${
   ({ color }) => {
   return switch (color) {
       case 'good': 'green'; break;
@@ -28,4 +29,3 @@ export const Button = styled.button`
     }
   }
   }; */
-`;
