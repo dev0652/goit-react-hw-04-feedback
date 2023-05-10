@@ -39,11 +39,13 @@ class App extends Component {
       countPositiveFeedbackPercentage,
     } = this;
 
-    // const { good, neutral, bad } = state;
+    const title = 'Rate our service';
+    const message = 'There is no feedback yet';
 
+    // const { good, neutral, bad } = state;
     return (
       <Wrapper>
-        <Section title="Rate our service">
+        <Section title={title}>
           <FeedbackOptions options={state} onLeaveFeedback={updateFeedback} />
           <Heading>Statistics</Heading>
           {Object.values(state).some(el => el !== 0) ? (
@@ -56,7 +58,7 @@ class App extends Component {
               positivePercentage={countPositiveFeedbackPercentage()}
             />
           ) : (
-            <Notification message="There is no feedback yet" />
+            <Notification message={message} />
           )}
         </Section>
       </Wrapper>
