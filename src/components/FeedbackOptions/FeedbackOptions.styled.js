@@ -11,21 +11,45 @@ export const Button = styled.button`
   font-size: 1.2rem;
   text-transform: capitalize;
   border: none;
-  /* border-radius: 8px; */
   border-radius: 50%;
 
-  padding: 10px;
-  width: 7rem;
-  height: 7rem;
+  /* padding: 10px; */
+  width: 6rem;
+  height: 6rem;
+
+  background-color: ${setButtonBgColor};
+
+  &:hover {
+    color: white;
+    background-color: ${setButtonHoverBgColor};
+  }
 `;
 
-/* background-color: ${
-  ({ color }) => {
-  return switch (color) {
-      case 'good': 'green'; break;
-      case 'neutral': 'goldenrod'; break;
-      case 'bad': 'red'; break;
-      default: 'normal'; break;
-    }
+function setButtonBgColor({ option }) {
+  switch (option) {
+    case 'good':
+      // return '#4CAF50';
+      return '#53d769';
+    case 'neutral':
+      // return 'goldenrod';
+      return '#5ba4fc';
+    case 'bad':
+      // return '#f44336';
+      return '#fc3d39';
+    default:
+      return 'normal';
   }
-  }; */
+}
+
+function setButtonHoverBgColor({ option }) {
+  switch (option) {
+    case 'good':
+      return '#46c263';
+    case 'neutral':
+      return '#5897ee';
+    case 'bad':
+      return '#e33437';
+    default:
+      return 'normal';
+  }
+}

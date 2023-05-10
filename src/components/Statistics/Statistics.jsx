@@ -4,7 +4,7 @@ const Statistics = ({ options, total, positivePercentage }) => {
   return (
     <StatList>
       {Object.entries(options).map(([key, value]) => (
-        <StatItem key={key}>
+        <StatItem key={key} option={key}>
           {key}: {value}
         </StatItem>
       ))}
@@ -12,7 +12,7 @@ const Statistics = ({ options, total, positivePercentage }) => {
       <StatItem key="total">Total: {total}</StatItem>
 
       <StatItem key="percentage">
-        Positive feedback: {positivePercentage}
+        Positive feedback: {positivePercentage}%
       </StatItem>
     </StatList>
   );
