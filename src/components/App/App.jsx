@@ -43,33 +43,22 @@ class App extends Component {
 
     return (
       <Wrapper>
-        aaaaaaaaaaaa
-        <Section
-          title="Rate our service"
-          children={
-            <>
-              <FeedbackOptions
-                options={state}
-                onLeaveFeedback={updateFeedback}
-              />
-
-              <Heading>Statistics</Heading>
-
-              {Object.values(state).some(el => el !== 0) ? (
-                <Statistics
-                  // good={good}
-                  // neutral={neutral}
-                  // bad={bad}
-                  options={state}
-                  total={countTotalFeedback()}
-                  positivePercentage={countPositiveFeedbackPercentage()}
-                />
-              ) : (
-                <Notification message="There is no feedback yet" />
-              )}
-            </>
-          }
-        />
+        <Section title="Rate our service">
+          <FeedbackOptions options={state} onLeaveFeedback={updateFeedback} />
+          <Heading>Statistics</Heading>
+          {Object.values(state).some(el => el !== 0) ? (
+            <Statistics
+              // good={good}
+              // neutral={neutral}
+              // bad={bad}
+              options={state}
+              total={countTotalFeedback()}
+              positivePercentage={countPositiveFeedbackPercentage()}
+            />
+          ) : (
+            <Notification message="There is no feedback yet" />
+          )}
+        </Section>
       </Wrapper>
     );
   }
