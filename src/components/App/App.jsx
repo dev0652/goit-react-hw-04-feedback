@@ -25,7 +25,7 @@ class App extends Component {
     return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
 
-  updateFeedback = key => {
+  updateFeedback = key => () => {
     this.setState(prevState => ({
       [key]: prevState[key] + 1,
     }));
