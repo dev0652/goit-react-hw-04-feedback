@@ -5,7 +5,7 @@ import Notification from '../Notification';
 import Section from '../Section';
 import Statistics from '../Statistics';
 
-import { Heading, Wrapper } from './App.styled';
+import { Wrapper } from './App.styled';
 
 // ######################################
 
@@ -39,28 +39,24 @@ class App extends Component {
       countPositiveFeedbackPercentage,
     } = this;
 
-    const title = 'Rate our service';
-    const message = 'There is no feedback yet';
-
     // const { good, neutral, bad } = state;
     return (
       <Wrapper>
-        <Section title={title}>
+        {/* Feedback */}
+        <Section title="Please leave feedback">
           <FeedbackOptions options={state} onLeaveFeedback={updateFeedback} />
+        </Section>
 
-          <Heading>Statistics</Heading>
-
+        {/* Stats */}
+        <Section title="Statistics">
           {Object.values(state).some(el => el !== 0) ? (
             <Statistics
-              // good={good}
-              // neutral={neutral}
-              // bad={bad}
               options={state}
               total={countTotalFeedback()}
               positivePercentage={countPositiveFeedbackPercentage()}
             />
           ) : (
-            <Notification message={message} />
+            <Notification message="There is no feedback yet" />
           )}
         </Section>
       </Wrapper>

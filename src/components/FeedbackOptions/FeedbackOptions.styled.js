@@ -11,13 +11,12 @@ export const Button = styled.button`
   font-size: 1.2rem;
   text-transform: capitalize;
   border: none;
-  border-radius: 50%;
+  border-radius: 4px;
 
-  /* padding: 10px; */
-  width: 6rem;
-  height: 6rem;
+  padding: 10px;
+  min-width: 5.5rem;
 
-  background-color: ${setButtonBgColor};
+  transition: all 300ms;
 
   &:hover {
     color: white;
@@ -25,30 +24,14 @@ export const Button = styled.button`
   }
 `;
 
-function setButtonBgColor({ option }) {
-  switch (option) {
-    case 'good':
-      // return '#4CAF50';
-      return '#53d769';
-    case 'neutral':
-      // return 'goldenrod';
-      return '#5ba4fc';
-    case 'bad':
-      // return '#f44336';
-      return '#fc3d39';
-    default:
-      return 'normal';
-  }
-}
-
 function setButtonHoverBgColor({ option }) {
   switch (option) {
     case 'good':
-      return '#46c263';
+      return '#4CAF50';
     case 'neutral':
-      return '#5897ee';
+      return 'goldenrod';
     case 'bad':
-      return '#e33437';
+      return '#f44336';
     default:
       return 'normal';
   }

@@ -1,13 +1,13 @@
 import { styled } from 'styled-components';
 
 export const Wrapper = styled.div`
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+  margin-top: 20vh;
 
-export const Heading = styled.h2`
-  font-weight: 500;
-  font-size: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 40px;
+
+  font-size: 1.3rem;
 `;
