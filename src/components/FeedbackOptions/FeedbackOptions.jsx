@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { ButtonList, ButtonItem, Button } from './FeedbackOptions.styled';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
@@ -15,3 +16,16 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 };
 
 export default FeedbackOptions;
+
+// ######################################
+
+const number = PropTypes.number.isRequired;
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.exact({
+    good: number,
+    neutral: number,
+    bad: number,
+  }).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+};

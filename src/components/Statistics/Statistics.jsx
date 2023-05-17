@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { StatList, StatItem } from './Statistics.styled';
 
 const Statistics = ({ options, total, positivePercentage }) => {
@@ -19,3 +20,17 @@ const Statistics = ({ options, total, positivePercentage }) => {
 };
 
 export default Statistics;
+
+// ######################################
+
+const number = PropTypes.number.isRequired;
+
+Statistics.propTypes = {
+  options: PropTypes.exact({
+    good: number,
+    neutral: number,
+    bad: number,
+  }).isRequired,
+  total: number,
+  positivePercentage: number,
+};

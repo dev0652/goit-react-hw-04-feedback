@@ -47,7 +47,9 @@ class App extends Component {
       <Wrapper>
         <Section title={title}>
           <FeedbackOptions options={state} onLeaveFeedback={updateFeedback} />
+
           <Heading>Statistics</Heading>
+
           {Object.values(state).some(el => el !== 0) ? (
             <Statistics
               // good={good}
