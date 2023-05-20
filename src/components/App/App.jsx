@@ -44,19 +44,26 @@ class App extends Component {
       <Wrapper>
         {/* Feedback */}
         <Section title="Please leave feedback">
-          <FeedbackOptions options={state} onLeaveFeedback={updateFeedback} />
+          <FeedbackOptions
+            optionsKeys={Object.keys(state)}
+            onLeaveFeedback={updateFeedback}
+          />
         </Section>
 
         {/* Stats */}
         <Section title="Statistics">
-          {Object.values(state).some(el => el !== 0) ? (
+          {/* No feedback submitted */}
+          {countTotalFeedback() === 0 && (
+            <Notification message="There is no feedback yet" />
+          )}
+
+          {/* Feedback submitted */}
+          {countTotalFeedback() !== 0 && (
             <Statistics
               options={state}
               total={countTotalFeedback()}
               positivePercentage={countPositiveFeedbackPercentage()}
             />
-          ) : (
-            <Notification message="There is no feedback yet" />
           )}
         </Section>
       </Wrapper>
