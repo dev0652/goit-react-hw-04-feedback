@@ -2,6 +2,13 @@ import PropTypes from 'prop-types';
 import { StatList, StatItem, Percentage, Total } from './Statistics.styled';
 
 const Statistics = ({ options, total, positivePercentage }) => {
+  let smiley = null;
+
+  if (positivePercentage >= 80) smiley = '😇';
+  if (positivePercentage >= 50 && positivePercentage < 80) smiley = '😊';
+  if (positivePercentage >= 30 && positivePercentage < 50) smiley = '😐';
+  if (positivePercentage < 30) smiley = '😞';
+
   return (
     <div>
       <StatList>
@@ -13,7 +20,9 @@ const Statistics = ({ options, total, positivePercentage }) => {
       </StatList>
 
       <Total>Total: {total}</Total>
-      <Percentage>Positive feedback: {positivePercentage}%</Percentage>
+      <Percentage>
+        Positive feedback: {positivePercentage}% {smiley}
+      </Percentage>
     </div>
   );
 };

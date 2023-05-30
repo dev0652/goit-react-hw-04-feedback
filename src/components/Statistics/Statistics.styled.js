@@ -26,6 +26,6 @@ function setStatColor({ option }) {
 export const Total = styled.p``;
 
 export const Percentage = styled.p`
-  color: #4caf50;
-  font-weight: 500;
+  /* color: #4caf50; */
+  /* font-weight: 500; */
 `;
